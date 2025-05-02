@@ -1,0 +1,17 @@
+[
+    {
+        "question": "What is the full form of IP?",
+        "options": ["Interface Program", "Interface protocol", "Internet Program", "Internet Protocol"],
+        "answer": "Internet Protocol"
+    },
+    {
+        "question": "One byte is equivalent to",
+        "options": ["4 bits", "8 bits", "12 bits", "32 bits"],
+        "answer": "8 bits"
+    },
+    {
+        "question": "Intersection of columns and rows is called a",
+        "options": ["Data", "Table", "Cell", "Schema"],
+        "answer": "Cell"
+    }
+]

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="quiz_style.css">
+    <script>
+        function validateAnswers() {
+            var form = document.forms[0];
+            var questions = [{"answer": "Internet Protocol", "options": ["Interface Program", "Interface protocol", "Internet Program", "Internet Protocol"], "question": "What is the full form of IP?"}, {"answer": "8 bits", "options": ["4 bits", "8 bits", "12 bits", "32 bits"], "question": "One byte is equivalent to"}, {"answer": "Cell", "options": ["Data", "Table", "Cell", "Schema"], "question": "Intersection of columns and rows is called a"}];
+            var score = 0;
+
+            for (var i = 0; i < questions.length; i++)  {
+                var questionNumber = i + 1;
+                var selectedOption = form["q" + questionNumber + "_answer"];
+
+                var isOptionSelected = false;
+                for (var j = 0; j < selectedOption.length; j++) {
+                    if (selectedOption[j].checked) {
+                        isOptionSelected = true;
+                        if (selectedOption[j].value == questions[i].answer) {
+                            score++;
+                        }
+                        break;
+                    }
+                }
+
+                if (!isOptionSelected) {
+                    alert("Please select an option for question " + questionNumber);
+                    return;
+                }
+            }
+
+            alert("You scored " + score + " out of " + questions.length);
+        }
+    </script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+        <form>
+        
+            <p>What is the full form of IP?</p>
+            
+            
+            <label>
+                <input type="radio" name="q1_answer" value="Interface Program">Interface Program
+            </label>
+            
+            <label>
+                <input type="radio" name="q1_answer" value="Interface protocol">Interface protocol
+            </label>
+            
+            <label>
+                <input type="radio" name="q1_answer" value="Internet Program">Internet Program
+            </label>
+            
+            <label>
+                <input type="radio" name="q1_answer" value="Internet Protocol">Internet Protocol
+            </label>
+            
+        
+            <p>One byte is equivalent to</p>
+            
+            
+            <label>
+                <input type="radio" name="q2_answer" value="4 bits">4 bits
+            </label>
+            
+            <label>
+                <input type="radio" name="q2_answer" value="8 bits">8 bits
+            </label>
+            
+            <label>
+                <input type="radio" name="q2_answer" value="12 bits">12 bits
+            </label>
+            
+            <label>
+                <input type="radio" name="q2_answer" value="32 bits">32 bits
+            </label>
+            
+        
+            <p>Intersection of columns and rows is called a</p>
+            
+            
+            <label>
+                <input type="radio" name="q3_answer" value="Data">Data
+            </label>
+            
+            <label>
+                <input type="radio" name="q3_answer" value="Table">Table
+            </label>
+            
+            <label>
+                <input type="radio" name="q3_answer" value="Cell">Cell
+            </label>
+            
+            <label>
+                <input type="radio" name="q3_answer" value="Schema">Schema
+            </label>
+            
+        
+        </form>
+        <button type="button" onclick="validateAnswers()">Submit</button>
+    </div>
+</body>
+</html>
